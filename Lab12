@@ -1,0 +1,96 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package quiz12;
+
+/**
+ *
+ * @author dawso
+ */
+import java.util.Scanner;
+public class Quiz12 {
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    Scanner input=new Scanner(System.in);
+    int num1,num2,num3;
+    System.out.println("Enter the First number ");
+    num1=input.nextInt();
+    System.out.print("Enter the Second number ");
+    num2=input.nextInt();
+    System.out.print("Enter the Third Number ");
+    num3=input.nextInt();
+    
+    if (num1>num2 || num1>num3)
+    {
+        if (num2>num3);
+        System.out.println("The middle number is "+num2);
+        System.out.println("The biggest number is "+num1);
+        System.out.println("The smllest number is "+num3);
+    }
+    else if (num1<num2 || num1<num3)
+    {
+        if (num3>num2){
+         System.out.println("The middle number is "+num2);
+         System.out.println("The smallest number is "+num1);
+         System.out.println("The largest number is "+num3);
+        }
+    }
+    else if (num1>num2 || num1<num3)
+    {
+         if (num3>num2){
+         System.out.println("The middle number is "+num1);
+         System.out.println("The smallest number is "+num2);
+         System.out.println("The largest number is "+num3);
+        }
+    }
+     else if (num1<num2 || num1>num3)
+    {
+         if (num3<num2){
+         System.out.println("The middle number is "+num1);
+         System.out.println("The smallest number is "+num3);
+         System.out.println("The largest number is "+num2);
+        }
+    }
+    
+    Scanner coor=new Scanner(System.in);
+    int ra,la,rb,lb;
+    System.out.println("Enter right endpoint for segment A: ");
+    ra=coor.nextInt();
+    System.out.println("Enter left endpoint for segment A: ");
+    la=coor.nextInt();
+    System.out.println("Enter right endpoint for segment B ");
+    rb=coor.nextInt();
+    System.out.println("Enter left endpoint for segment : ");
+    lb=coor.nextInt();
+    String result = "";
+    int x=(ra-lb);
+    int y=(rb-ra);
+    if (ra>rb || la<lb)
+    {
+        result="Segment B is inside of segment A.";
+    }
+    else if (lb>la || rb>ra)
+    {
+        result="Segment A is inside of Segment B.";
+    }
+    else if (la>lb || ra>rb)
+    {
+        result="Segment A and segment B are overlapping by"+y;
+    }        
+    else if (lb>la ||rb>ra)
+    {
+        result="Segment A and Segment B are overlapping by"+x;
+    }
+    else
+    {
+        result="The segments are not touching each other.";
+    }  
+    System.out.println(result);
+    }
+}
